@@ -1,3 +1,4 @@
+const { hostname } = require('os');
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -6,6 +7,6 @@ const server = http.createServer((req, res) => {
     res.end('Hello, world!');
 });
 
-server.listen(8080, 'localhost', () => {
+server.listen(8080, hostname, () => {
     console.log('Server running at http://localhost:8080/');
 });
